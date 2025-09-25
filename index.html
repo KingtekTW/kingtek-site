@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
-  <title>Kingtek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingtek 總督科技</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>公司網站測試頁</h1>
-  <p>靜態網站。</p>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="intro">
+      <h1>Kingtek 總督科技</h1>
+      <p>專注於自動化設備與電子零組件的解決方案</p>
+      <h2>請選擇事業部</h2>
+      <div class="business-links">
+        <a href="semiconductor/index.html" class="btn">半導體及電子業設備</a>
+        <a href="electronics/index.html" class="btn">電子零組件</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script>
+    fetch("/partials/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("site-footer").innerHTML = data;
+      });
+  </script>
+  <script>
+    fetch("/partials/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+
+        // header 載入完成後再掛事件
+        const menuBtn = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".nav-links");
+        if (menuBtn && nav) {
+          menuBtn.addEventListener("click", () => {
+            nav.classList.toggle("show");
+          });
+        }
+      });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+
 </body>
+
 </html>

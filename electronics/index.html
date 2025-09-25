@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電子零組件 - 總督科技</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section>
+      <h1>電子零組件</h1>
+      <p>穩定可靠的電子零組件供應，包括可變電阻、程式開關與專利產品。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Kingtek 總督科技</p>
+  </footer>
+
+  <script>
+    fetch("/partials/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
