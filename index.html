@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kingtek 總督科技</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <header id="site-header"></header>
 
@@ -23,40 +21,8 @@
     </section>
   </main>
 
-  <footer id="site-footer"></footer>
-  <script>
-    fetch("/partials/footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("site-footer").innerHTML = data;
-      });
-  </script>
-  <script>
-    fetch("/partials/header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("site-header").innerHTML = data;
+<footer id="site-footer"></footer>
 
-        // header 載入完成後再掛事件
-        const menuBtn = document.querySelector(".menu-toggle");
-        const nav = document.querySelector(".nav-links");
-        if (menuBtn && nav) {
-          menuBtn.addEventListener("click", () => {
-            nav.classList.toggle("show");
-          });
-        }
-      });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav-links");
-      menuBtn.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-  </script>
-
+<script src="js/include.js"></script>
 </body>
-
 </html>
