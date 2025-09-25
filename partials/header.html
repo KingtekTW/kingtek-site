@@ -2,7 +2,7 @@
   <div class="logo-area">
     <a href="/index.html" class="brand">
       <img src="/images/logo.png" alt="Kingtek 總督科技 Logo">
-      <span class="brand-name">KINGTEK 總督科技 (原總督電子)</span>
+      <span class="brand-name">KINGTEK 總督科技</span>
     </a>
   </div>
 
@@ -19,3 +19,15 @@
     </ul>
   </nav>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    if (menuBtn && nav) {
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    }
+  });
+</script>
