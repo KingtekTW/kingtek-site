@@ -1,7 +1,19 @@
-html, body {
+html,
+body {
   margin: 0;
-  padding: 0;
 }
+
+html {
+  font-size: 22px;   /* 原本應該是 14px 或 16px，這裡整體放大一級 */
+}
+
+body {
+  font-family: "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.7;
+  color: #222;
+}
+
 /* Header Bar */
 .header-bar {
   display: flex;
@@ -10,6 +22,12 @@ html, body {
   background: #eaeaea;
   padding: 0.5rem 1rem;
   border-bottom: 2px solid #003366;
+  font-size: 1.1rem;
+}
+
+.header-bar .brand-name {
+  font-size: 1.3rem;   /* LOGO 旁邊的字再大一點 */
+  font-weight: bold;
 }
 
 .logo-area {
@@ -68,9 +86,11 @@ html, body {
 /* 手機版樣式 */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* 預設隱藏 */
+    display: none;
+    /* 預設隱藏 */
     position: absolute;
-    top: 60px;   /* header 高度 */
+    top: 60px;
+    /* header 高度 */
     right: 0;
     background: #f8f8f8;
     width: 200px;
@@ -88,14 +108,16 @@ html, body {
   }
 
   .nav-links.show {
-    display: block; /* 切換展開 */
+    display: block;
+    /* 切換展開 */
   }
 }
 
 
 /* Footer */
 .footer-bar {
-  background: #003366;   /* 深藍背景 */
+  background: #003366;
+  /* 深藍背景 */
   color: #fff;
   padding: 1.5rem;
   text-align: center;
@@ -108,9 +130,11 @@ html, body {
 }
 
 .footer-bar a {
-  color: #ffcc00;  /* 金黃色超連結 */
+  color: #ffcc00;
+  /* 金黃色超連結 */
   text-decoration: none;
-  word-break: break-all; /* 手機螢幕不會爆版 */
+  word-break: break-all;
+  /* 手機螢幕不會爆版 */
 }
 
 .footer-bar a:hover {
@@ -123,8 +147,29 @@ html, body {
     font-size: 0.9rem;
     line-height: 1.5rem;
   }
+
   .footer-bar {
     padding: 1rem;
   }
 }
 
+
+main section {
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+main h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+main p {
+  font-size: 1.1rem;
+}
+main h1, main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}

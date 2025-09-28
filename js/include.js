@@ -1,17 +1,5 @@
-(function () {
-  // 如果在 GitHub Pages，就加上 <base>
-  if (window.location.hostname.includes("github.io")) {
-    const pathParts = window.location.pathname.split("/").filter(Boolean);
-    const repo = pathParts[0]; // 例如 kingtek-site
-
-    const base = document.createElement("base");
-    base.href = "/" + repo + "/";  
-    document.head.prepend(base);
-  }
-})();
-
 function fixLinks(container, prefix) {
-  // 修正 <a> 連結
+  // 修正 <a>
   container.querySelectorAll("a[href]").forEach(a => {
     const href = a.getAttribute("href");
     if (href && !href.startsWith("http") && !href.startsWith("mailto:") && !href.startsWith("tel:")) {
@@ -19,7 +7,7 @@ function fixLinks(container, prefix) {
     }
   });
 
-  // 修正 <img> 圖片
+  // 修正 <img>
   container.querySelectorAll("img[src]").forEach(img => {
     const src = img.getAttribute("src");
     if (src && !src.startsWith("http")) {
@@ -31,11 +19,10 @@ function fixLinks(container, prefix) {
 function getPrefix() {
   const pathParts = window.location.pathname.split("/").filter(Boolean);
 
-  // 找 repo 名稱 (ex: kingtek-site)
-  const repoIndex = pathParts.indexOf("kingtek-site");
-
-  // 算目前在 repo 裡的深度
-  const depth = pathParts.length - (repoIndex + 1);
+  // 假設根目錄就是專案的 base
+  // depth = 0 → index.html
+  // depth = 1 → /semiconductor/index.html
+  const depth = pathParts.length > 1 ? pathParts.length - 1 : 0;
 
   let prefix = "";
   for (let i = 0; i < depth; i++) {
@@ -53,8 +40,6 @@ function includePartials() {
     .then(data => {
       const headerEl = document.getElementById("site-header");
       headerEl.innerHTML = data;
-
-      // 修正 header 裡的相對路徑
       fixLinks(headerEl, prefix);
 
       // 綁定漢堡選單
@@ -73,8 +58,6 @@ function includePartials() {
     .then(data => {
       const footerEl = document.getElementById("site-footer");
       footerEl.innerHTML = data;
-
-      // 修正 footer 裡的相對路徑
       fixLinks(footerEl, prefix);
     });
 }
