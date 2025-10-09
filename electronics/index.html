@@ -1,25 +1,63 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>電子零組件 - 總督科技</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>電子零組件 - Kingtek 總督科技</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/include.js" defer></script>
 </head>
 
 <body>
+  <!-- Header -->
   <header id="site-header"></header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="hero">
       <h1>電子零組件</h1>
-      <p>穩定可靠的電子零組件供應，包括可變電阻、程式開關與專利產品。</p>
+      <p>
+        總督科技提供多樣化的電子零組件，包含程式開關、輕觸開關以及可變電阻，
+        廣泛應用於半導體、電子產品與精密工業。
+      </p>
+    </section>
+
+    <section class="products-grid">
+      <!-- 程式開關 -->
+      <div class="product-card">
+        <img src="/images/dip-switch.gif" alt="輕觸開關" class="product-img">
+        <div class="product-info">
+          <h2>程式開關 (DIP Switches)</h2>
+          <p>多系列 DIP Switch，含 Half-Pitch、IC Type、Surface Mount 等。</p>
+          <a href="/electronics/dip-switches/index.html" class="btn">了解更多</a>
+        </div>
+      </div>
+
+      <!-- 輕觸開關 -->
+      <div class="product-card">
+        <img src="/images/tact-switch.gif" alt="輕觸開關" class="product-img">
+        <div class="product-info">
+          <h2>輕觸開關 (Tact Switches)</h2>
+          <p>多種尺寸與操作力道選擇，適用於精密電子產品。</p>
+          <a href="/electronics/tact-switches/index.html" class="btn">了解更多</a>
+        </div>
+      </div>
+
+
+      <!-- 可變電阻 -->
+      <div class="product-card">
+        <img src="/images/variable-resistor.gif" alt="輕觸開關" class="product-img">
+        <div class="product-info">
+          <h2>可變電阻 (Semi-Fixed Variable Resistors)</h2>
+          <p>陶瓷、碳膜、酚醛材質選擇，可靠耐用。</p>
+          <a href="/electronics/variable-resistors/index.html" class="btn">了解更多</a>
+        </div>
+      </div>
     </section>
   </main>
-  <footer id="site-footer"></footer>
 
-  <script src="../js/include.js"></script>
+  <!-- Footer -->
+  <footer id="site-footer"></footer>
 </body>
 
 </html>

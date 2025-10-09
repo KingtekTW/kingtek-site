@@ -1,65 +1,18 @@
-function fixLinks(container, prefix) {
-  // 修正 <a>
-  container.querySelectorAll("a[href]").forEach(a => {
-    const href = a.getAttribute("href");
-    if (href && !href.startsWith("http") && !href.startsWith("mailto:") && !href.startsWith("tel:")) {
-      a.setAttribute("href", prefix + href);
-    }
-  });
-
-  // 修正 <img>
-  container.querySelectorAll("img[src]").forEach(img => {
-    const src = img.getAttribute("src");
-    if (src && !src.startsWith("http")) {
-      img.setAttribute("src", prefix + src);
-    }
-  });
-}
-
-function getPrefix() {
-  const pathParts = window.location.pathname.split("/").filter(Boolean);
-
-  // 假設根目錄就是專案的 base
-  // depth = 0 → index.html
-  // depth = 1 → /semiconductor/index.html
-  const depth = pathParts.length > 1 ? pathParts.length - 1 : 0;
-
-  let prefix = "";
-  for (let i = 0; i < depth; i++) {
-    prefix += "../";
-  }
-  return prefix;
-}
-
-function includePartials() {
-  const prefix = getPrefix();
-
-  // header
-  fetch(prefix + "partials/header.html")
+// include.js：在所有頁面自動載入 header 與 footer，固定從網站根目錄抓
+document.addEventListener("DOMContentLoaded", () => {
+  // 載入 Header
+  fetch("/partials/header.html")
     .then(res => res.text())
-    .then(data => {
+    .then(html => {
       const headerEl = document.getElementById("site-header");
-      headerEl.innerHTML = data;
-      fixLinks(headerEl, prefix);
-
-      // 綁定漢堡選單
-      const menuBtn = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav-links");
-      if (menuBtn && nav) {
-        menuBtn.addEventListener("click", () => {
-          nav.classList.toggle("show");
-        });
-      }
+      if (headerEl) headerEl.innerHTML = html;
     });
 
-  // footer
-  fetch(prefix + "partials/footer.html")
+  // 載入 Footer
+  fetch("/partials/footer.html")
     .then(res => res.text())
-    .then(data => {
+    .then(html => {
       const footerEl = document.getElementById("site-footer");
-      footerEl.innerHTML = data;
-      fixLinks(footerEl, prefix);
+      if (footerEl) footerEl.innerHTML = html;
     });
-}
-
-document.addEventListener("DOMContentLoaded", includePartials);
+});
