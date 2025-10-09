@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -162,7 +162,8 @@ body {
 .contact-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;    /* ⬅️ 中央對齊 */
+  justify-content: center;
+  /* ⬅️ 中央對齊 */
   gap: 1rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -177,7 +178,8 @@ body {
 @media (max-width: 600px) {
   .contact-row {
     flex-direction: column;
-    align-items: center;      /* ⬅️ 中央對齊 */
+    align-items: center;
+    /* ⬅️ 中央對齊 */
   }
 }
 
@@ -202,16 +204,6 @@ main h1,
 main h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-}
-
-
-.product-card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
-  /* 手機換行 */
 }
 
 .product-img {
@@ -242,15 +234,15 @@ main h2 {
   border-radius: 4px;
 }
 
-
 .product-card {
-  border: 1px solid #e0e0e0;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  border: 1px solid #e0e0e0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease;
 }
@@ -272,5 +264,124 @@ main h2 {
 
   .product-card img {
     margin-bottom: 1rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  background: #2a4896;
+  /* 深藍底 */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #1c3573;
+}
+
+.pdf-section {
+  margin-top: 3rem;
+}
+
+.pdf-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.pdf-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pdf-list li {
+  margin: 0.5rem 0;
+}
+
+.pdf-list a {
+  color: #2a4896;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pdf-list a:hover {
+  text-decoration: underline;
+}
+
+.ordering-guide {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.ordering-guide h2 {
+  margin-bottom: 1.5rem;
+}
+
+.ordering-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* 圖片之間的距離 */
+}
+
+.ordering-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ordering-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+/* 讓右側 ordering-guide 固定在左側卡片的右邊 */
+/* .dip-main-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+} */
+
+.product-series-grid {
+  flex: 1 1 60%;
+}
+
+.ordering-guide {
+  max-width: 1200px;
+  /* ✅ 擴大範圍，原本只有 800px */
+  margin: 3rem auto;
+}
+
+.ordering-images img {
+  max-width: 100%;
+  width: 100%;
+  /* ✅ 拉滿可用寬度 */
+  height: auto;
+}
+
+.ordering-guide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 手機版改為上下排列 */
+@media (max-width: 900px) {
+  .dip-main-content {
+    flex-direction: column;
+  }
+
+  .product-series-grid,
+  .ordering-guide {
+    flex: 1 1 100%;
   }
 }
