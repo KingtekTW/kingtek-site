@@ -20,7 +20,6 @@ body {
   color: #222;
 }
 
-/* Header Bar */
 .header-bar {
   display: flex;
   align-items: center;
@@ -59,7 +58,6 @@ body {
   color: #003366;
 }
 
-/* 導覽列 (桌面版) */
 .nav-links ul {
   list-style: none;
   display: flex;
@@ -79,7 +77,6 @@ body {
   color: #0099ff;
 }
 
-/* 漢堡按鈕 (預設隱藏) */
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -89,14 +86,11 @@ body {
   color: #003366;
 }
 
-/* 手機版樣式 */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    /* 預設隱藏 */
+    display: none; 
     position: absolute;
-    top: 60px;
-    /* header 高度 */
+    top: 60px; 
     right: 0;
     background: #f8f8f8;
     width: 200px;
@@ -115,15 +109,12 @@ body {
 
   .nav-links.show {
     display: block;
-    /* 切換展開 */
   }
 }
-
 
 /* Footer */
 .footer-bar {
   background: #003366;
-  /* 深藍背景 */
   color: #fff;
   padding: 1.5rem;
   text-align: center;
@@ -136,18 +127,15 @@ body {
 }
 
 .footer-bar a {
-  color: #ffdd00;
-  /* 金黃色超連結 */
+  color: #ffdd00; 
   text-decoration: none;
   word-break: break-all;
-  /* 手機螢幕不會爆版 */
 }
 
 .footer-bar a:hover {
   text-decoration: underline;
 }
 
-/* 手機版調整 */
 @media (max-width: 600px) {
   .footer-content {
     font-size: 0.9rem;
@@ -162,8 +150,7 @@ body {
 .contact-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  /* ⬅️ 中央對齊 */
+  justify-content: center; /* ⬅️ 中央對齊 */
   gap: 1rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -174,15 +161,12 @@ body {
   font-size: 0.95rem;
 }
 
-/* 手機版：上下排列但仍置中 */
 @media (max-width: 600px) {
   .contact-row {
     flex-direction: column;
-    align-items: center;
-    /* ⬅️ 中央對齊 */
+  align-items: center; /* ⬅️ 中央對齊 */
   }
 }
-
 
 main section {
   max-width: 800px;
@@ -204,6 +188,23 @@ main h1,
 main h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
+}
+
+.products-grid,
+.product-series-grid,
+.product-card,
+.product-card h2,
+.product-card p,
+.product-info {
+  text-align: left;
+}
+
+.product-card { 
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap; 
 }
 
 .product-img {
@@ -234,15 +235,14 @@ main h2 {
   border-radius: 4px;
 }
 
-.product-card {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.product-card { 
   border: 1px solid #e0e0e0;
   padding: 1.5rem;
   border-radius: 8px;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease;
 }
@@ -270,8 +270,7 @@ main h2 {
 .btn {
   display: inline-block;
   padding: 0.5em 1.2em;
-  background: #2a4896;
-  /* 深藍底 */
+  background: #2a4896; /* 深藍底 */
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -311,6 +310,7 @@ main h2 {
   text-decoration: underline;
 }
 
+
 .ordering-guide {
   margin-top: 3rem;
   text-align: center;
@@ -324,8 +324,7 @@ main h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  /* 圖片之間的距離 */
+  gap: 1rem; 
 }
 
 .ordering-images img {
@@ -342,28 +341,20 @@ main h2 {
   text-align: center;
 }
 
-/* 讓右側 ordering-guide 固定在左側卡片的右邊 */
-/* .dip-main-content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-} */
+
 
 .product-series-grid {
   flex: 1 1 60%;
 }
 
 .ordering-guide {
-  max-width: 1200px;
-  /* ✅ 擴大範圍，原本只有 800px */
+  max-width: 1200px; 
   margin: 3rem auto;
 }
 
 .ordering-images img {
   max-width: 100%;
-  width: 100%;
-  /* ✅ 拉滿可用寬度 */
+  width: 100%; 
   height: auto;
 }
 
