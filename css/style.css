@@ -3,8 +3,14 @@ body {
   margin: 0;
 }
 
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 html {
-  font-size: 22px;   /* 原本應該是 14px 或 16px，這裡整體放大一級 */
+  font-size: 22px;
 }
 
 body {
@@ -26,7 +32,7 @@ body {
 }
 
 .header-bar .brand-name {
-  font-size: 1.3rem;   /* LOGO 旁邊的字再大一點 */
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
@@ -130,7 +136,7 @@ body {
 }
 
 .footer-bar a {
-  color: #ffcc00;
+  color: #ffdd00;
   /* 金黃色超連結 */
   text-decoration: none;
   word-break: break-all;
@@ -153,6 +159,28 @@ body {
   }
 }
 
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;    /* ⬅️ 中央對齊 */
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-row p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* 手機版：上下排列但仍置中 */
+@media (max-width: 600px) {
+  .contact-row {
+    flex-direction: column;
+    align-items: center;      /* ⬅️ 中央對齊 */
+  }
+}
+
 
 main section {
   max-width: 800px;
@@ -169,7 +197,9 @@ main h1 {
 main p {
   font-size: 1.1rem;
 }
-main h1, main h2 {
+
+main h1,
+main h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
@@ -180,7 +210,8 @@ main h1, main h2 {
   align-items: center;
   gap: 2rem;
   margin: 2rem 0;
-  flex-wrap: wrap; /* 手機換行 */
+  flex-wrap: wrap;
+  /* 手機換行 */
 }
 
 .product-img {

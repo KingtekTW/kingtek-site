@@ -38,13 +38,31 @@
       margin: 0;
       text-align: justify;
     }
+
+    @media (max-width: 768px) {
+      .about-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-block img {
+        max-width: 100%;
+        flex: none;
+      }
+
+      .about-block p {
+        flex: none;
+        text-align: justify;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header id="site-header"></header>
 
-  <main>
+  <main class="container">
     <section class="about-section">
       <h1>總督科技公司簡介 (原總督電子)</h1>
 
