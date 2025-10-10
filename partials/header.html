@@ -6,16 +6,37 @@
     </a>
   </div>
 
-  <!-- 漢堡選單 -->
-  <button class="menu-toggle" aria-label="切換選單">☰</button>
+  <div class="nav-and-back desktop-only">
+    <button class="back-btn" aria-label="返回上一頁">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="/index.html">首頁</a></li>
+        <li><a href="/semiconductor/index.html">半導體自動化解決方案</a></li>
+        <li><a href="/electronics/index.html">電子零組件</a></li>
+        <li><a href="/about/index.html">關於我們</a></li>
+        <li><a href="/contact/index.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <nav class="nav-links" id="mobile-menu">
-    <ul>
-      <li><a href="/index.html">首頁</a></li>
-      <li><a href="/semiconductor/index.html">半導體及電子業設備</a></li>
-      <li><a href="/electronics/index.html">電子零組件</a></li>
-      <li><a href="/about/index.html">關於我們</a></li>
-      <li><a href="/contact/index.html">聯絡我們</a></li>
-    </ul>
-  </nav>
+  <div class="menu-controls mobile-only">
+    <button class="back-btn" aria-label="返回上一頁">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <button class="menu-toggle" aria-label="切換選單">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
 </div>
+
+<nav class="nav-links mobile-only" id="mobile-menu">
+  <ul>
+    <li><a href="/index.html">首頁</a></li>
+    <li><a href="/semiconductor/index.html">半導體自動化解決方案</a></li>
+    <li><a href="/electronics/index.html">電子零組件</a></li>
+    <li><a href="/about/index.html">關於我們</a></li>
+    <li><a href="/contact/index.html">聯絡我們</a></li>
+  </ul>
+</nav>

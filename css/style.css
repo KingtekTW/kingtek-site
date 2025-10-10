@@ -77,6 +77,7 @@ body {
   color: #0099ff;
 }
 
+/* 手機版才顯示選單 */
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -84,13 +85,31 @@ body {
   border: none;
   cursor: pointer;
   color: #003366;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-@media (max-width: 768px) {
+.menu-toggle:active {
+  transform: scale(0.9);
+  color: #0099ff;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #003366;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  color: #0099ff;
+}
+
+/* @media (max-width: 768px) {
   .nav-links {
-    display: none; 
+    display: none;
     position: absolute;
-    top: 60px; 
+    top: 60px;
     right: 0;
     background: #f8f8f8;
     width: 200px;
@@ -110,7 +129,78 @@ body {
   .nav-links.show {
     display: block;
   }
+} */
+
+/* 桌機版顯示 nav-and-back */
+.desktop-only {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
+
+.nav-links.mobile-only {
+  display: none;
+}
+
+@media (min-width: 1151px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media (max-width: 1150px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-controls.mobile-only {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .nav-links.mobile-only {
+    display: none;
+  }
+
+  .nav-links.mobile-only.show {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #f8f8f8;
+    width: 220px;
+    border: 1px solid #ccc;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 999;
+  }
+
+  .nav-links.mobile-only ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+  }
+}
+
+.back-btn,
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #003366;
+  cursor: pointer;
+}
+
 
 /* Footer */
 .footer-bar {
@@ -127,7 +217,7 @@ body {
 }
 
 .footer-bar a {
-  color: #ffdd00; 
+  color: #ffdd00;
   text-decoration: none;
   word-break: break-all;
 }
@@ -150,7 +240,8 @@ body {
 .contact-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* ⬅️ 中央對齊 */
+  justify-content: center;
+  /* ⬅️ 中央對齊 */
   gap: 1rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -164,7 +255,8 @@ body {
 @media (max-width: 600px) {
   .contact-row {
     flex-direction: column;
-  align-items: center; /* ⬅️ 中央對齊 */
+    align-items: center;
+    /* ⬅️ 中央對齊 */
   }
 }
 
@@ -199,12 +291,12 @@ main h2 {
   text-align: left;
 }
 
-.product-card { 
+.product-card {
   display: flex;
   align-items: center;
   gap: 2rem;
   margin: 2rem 0;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .product-img {
@@ -235,7 +327,7 @@ main h2 {
   border-radius: 4px;
 }
 
-.product-card { 
+.product-card {
   border: 1px solid #e0e0e0;
   padding: 1.5rem;
   border-radius: 8px;
@@ -270,7 +362,8 @@ main h2 {
 .btn {
   display: inline-block;
   padding: 0.5em 1.2em;
-  background: #2a4896; /* 深藍底 */
+  background: #2a4896;
+  /* 深藍底 */
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -294,22 +387,64 @@ main h2 {
 .pdf-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .pdf-list li {
-  margin: 0.5rem 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+  line-height: 1.6;
+}
+
+.pdf-list li:last-child {
+  border-bottom: none;
 }
 
 .pdf-list a {
   color: #2a4896;
   text-decoration: none;
   font-weight: 600;
+  display: block;
 }
 
 .pdf-list a:hover {
   text-decoration: underline;
 }
 
+.pdf-list a::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f1c1";
+  color: #d32f2f;
+  margin-right: 8px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .pdf-section h2 {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+  }
+
+  .pdf-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 left; 
+    max-width: 800px; 
+  }
+
+  .pdf-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .pdf-list a {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+}
 
 .ordering-guide {
   margin-top: 3rem;
@@ -324,7 +459,7 @@ main h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 .ordering-images img {
@@ -348,13 +483,13 @@ main h2 {
 }
 
 .ordering-guide {
-  max-width: 1200px; 
+  max-width: 1200px;
   margin: 3rem auto;
 }
 
 .ordering-images img {
   max-width: 100%;
-  width: 100%; 
+  width: 100%;
   height: auto;
 }
 
