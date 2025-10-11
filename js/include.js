@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.style.display = "none";
           } else {
             btn.style.display = "block";
-            btn.addEventListener("click", () => history.back());
+            btn.addEventListener("click", () => {
+              history.back();
+            })
           }
         });
       }

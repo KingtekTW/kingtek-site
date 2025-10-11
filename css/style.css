@@ -10,7 +10,7 @@ body {
 }
 
 html {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
 }
 
 .header-bar .brand-name {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
@@ -105,33 +105,6 @@ body {
   color: #0099ff;
 }
 
-/* @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #f8f8f8;
-    width: 200px;
-    border: 1px solid #ccc;
-  }
-
-  .nav-links ul {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links.show {
-    display: block;
-  }
-} */
-
-/* 桌機版顯示 nav-and-back */
 .desktop-only {
   display: flex;
   align-items: center;
@@ -173,7 +146,7 @@ body {
     top: 60px;
     right: 0;
     background: #f8f8f8;
-    width: 220px;
+    width: 200px;
     border: 1px solid #ccc;
     flex-direction: column;
     padding: 1rem;
@@ -270,15 +243,16 @@ main section {
 main h1 {
   text-align: center;
   margin-bottom: 2rem;
+
 }
 
 main p {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 main h1,
 main h2 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
@@ -310,12 +284,13 @@ main h2 {
 }
 
 .product-info h2 {
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   margin: 0 0 0.5rem 0;
 }
 
 .product-info p {
   margin: 0 0 1rem 0;
+  font-size: 0.9rem;
 }
 
 .product-info .btn {
@@ -334,7 +309,7 @@ main h2 {
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease;
 }
@@ -354,8 +329,8 @@ main h2 {
     text-align: center;
   }
 
-  .product-card img {
-    margin-bottom: 1rem;
+  .product-card h2{
+    margin: 0.5rem;
   }
 }
 
@@ -381,7 +356,7 @@ main h2 {
 
 .pdf-section h2 {
   margin-bottom: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .pdf-list {
@@ -403,7 +378,6 @@ main h2 {
 .pdf-list a {
   color: #2a4896;
   text-decoration: none;
-  font-weight: 600;
   display: block;
 }
 
@@ -440,9 +414,7 @@ main h2 {
   }
 
   .pdf-list a {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    letter-spacing: 0.01em;
+    font-size: 0.9rem;
   }
 }
 
