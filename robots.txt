@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.kingtek.com.tw/sitemap.xml
