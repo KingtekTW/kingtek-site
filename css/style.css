@@ -77,7 +77,6 @@ body {
   color: #0099ff;
 }
 
-/* 手機版才顯示選單 */
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -214,7 +213,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* ⬅️ 中央對齊 */
   gap: 1rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -229,7 +227,6 @@ body {
   .contact-row {
     flex-direction: column;
     align-items: center;
-    /* ⬅️ 中央對齊 */
   }
 }
 
@@ -329,7 +326,7 @@ main h2 {
     text-align: center;
   }
 
-  .product-card h2{
+  .product-card h2 {
     margin: 0.5rem;
   }
 }
@@ -404,8 +401,8 @@ main h2 {
   .pdf-list {
     list-style: none;
     padding: 0;
-    margin: 0 left; 
-    max-width: 800px; 
+    margin: 0 left;
+    max-width: 800px;
   }
 
   .pdf-list li {
@@ -472,7 +469,6 @@ main h2 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 手機版改為上下排列 */
 @media (max-width: 900px) {
   .dip-main-content {
     flex-direction: column;
@@ -481,5 +477,68 @@ main h2 {
   .product-series-grid,
   .ordering-guide {
     flex: 1 1 100%;
+  }
+}
+
+.semi-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.semi-card h2 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 0.4rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.semi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.semi-card img {
+  width: 100%;
+  max-width: 900px;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.semi-info {
+  width: 100%;
+  text-align: left;
+}
+
+.semi-info h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #002d5a;
+  text-align: left;
+}
+
+.semi-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #222;
+}
+
+@media (max-width: 900px) {
+  .semi-card img {
+    max-width: 100%;
+    max-height: 400px;
   }
 }

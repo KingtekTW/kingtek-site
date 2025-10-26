@@ -2,19 +2,67 @@
 <html lang="zh-TW">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kingtek 總督科技 - 專業電子零組件與半導體設備供應商，提供 DIP Switch、Tact Switch、VR 等產品。">
-  <meta name="keywords" content="Kingtek, 總督科技, 電子零件, 半導體設備, DIP Switch, Tact Switch, VR 可變電阻, 半導體自動化, EFEM, SECS/GEM">
-  <meta property="og:title" content="Kingtek 總督科技">
-  <meta property="og:description" content="專業電子零組件與半導體設備供應商，提供高品質 DIP、Tact、VR 系列產品。">
-  <meta property="og:image" content="/images/logo.png">
-  <meta property="og:url" content="https://www.kingtek.com.tw/">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="總督科技專注於半導體製程自動化設備，提供 E-Gun 蒸鍍上下片系統、EFEM 晶圓搬運與 AOI 檢測整合方案、探針 Sorting、自動化機聯網軟體 (SECS/GEM Dashboard)，協助晶圓廠實現智慧產線。">
+  <meta name="keywords" content="半導體自動化, 晶圓上下料, E-Gun, EFEM, AOI, SECS/GEM, 晶圓探針, 自動化設備, 智慧工廠, Kingtek 總督科技">
+  <meta property="og:title" content="Kingtek 總督科技 - 半導體製程自動化整合方案">
+  <meta property="og:description" content="E-Gun 蒸鍍上下片、EFEM AOI、探針 Sorting、自動化機聯網 Dashboard，一站式半導體智慧產線解決方案。">
+  <meta property="og:image" content="/images/logo.png" />
+  <meta property="og:url" content="https://www.kingtek.com.tw/semiconductor/" />
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <title>半導體製程自動化設備 | E-Gun、EFEM、AOI 檢測系統整合 - 總督科技 Kingtek</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/include.js" defer></script>
+  <style>
+    /* 這段保留：收合分類專用 */
+    .category {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+    }
 
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #f7f7f7;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-  <title>半導體及電子業設備 - 總督科技</title>
-  <link rel="stylesheet" href="/css/style.css">
+    .category-header:hover {
+      background: #eaeaea;
+    }
+
+    .category-header img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .category-content {
+      display: none;
+      padding-top: 1rem;
+    }
+
+    .category.open .category-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* RWD：收合時欄位改直式 */
+    @media (max-width: 768px) {
+      .category.open .category-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -22,14 +70,193 @@
 
   <main class="container">
     <section>
-      <h1>半導體及電子業設備</h1>
-      <p>提供精密自動化解決方案，支援無塵室與高精度製程。</p>
+      <h1>半導體與自動化解決方案</h1>
+      <p>總督科技提供從半導體製程、PCB與陶瓷基板自動化，到實驗室測試設備的全方位整合方案。</p>
+    </section>
+
+    <section class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <img src="/images/icon-semiconductor.png" alt="半導體ICON">
+        <h2>半導體製程解決方案</h2>
+      </div>
+      <div class="category-content">
+        <div class="semi-card">
+          <h2>E-Gun電子束蒸鍍盤全自動上下片</h2>
+          <img src="/images/egun-system.png" alt="E-Gun System">
+          <div class="product-info">
+            <p>- 解決半導體無人化生產流程中，最後一道關鍵瓶頸：3D 晶圓自動放置與搬運</p>
+            <p>- 因應多樣蒸鍍需求，支援內置式與外置式載盤，涵蓋4吋至12吋晶圓，甚至特殊方形載板與玻璃材料</p>
+            <p>- 支援SEMI OCR 及 2D Code，以及檢易破片判斷</p>
+            <p>- 自動對心 具備斜插/突出/疊片/缺片檢查，對應高Warpage有對應模組</p>
+            <p>- 設計易於自動化的鍍鍋/盤固定方式，亦可搭配AGV、AMR</p>
+            <p>- 所有對應產品已完成開發，具備高度擴展性，是面向第三代半導體的重要設備平台</p>
+            <p>- 已就本技術進行多項專利申請，強化技術壁壘與市場競爭力</p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>自動化機聯網軟體（SECS/GEM, Dashboard）</h2>
+          <img src="/images/secs-dashboard.png" alt="SECS/GEM Dashboard">
+          <div class="product-info">
+            <p>- 針對半導體廠客戶，提供MES端及EQP端的解決方案</p>
+            <p>- 無須Coding，具GUI與批量佈署能力</p>
+            <p>- 支援權限管理，及簡易客製化</p>
+            <p>- 也可將環境及振動監測上線SEC</p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>含 AOI 功能的EFEM</h2>
+          <img src="/images/efem-aoi.png" alt="EFEM AOI">
+          <div class="product-info">
+            <p>- 支援4"~12" 晶圓，自動對心 具備斜插/突出/疊片/缺片檢查</p>
+            <p>- 支援FOUP/FOSB/Open CST/Shipper/Coin box</p>
+            <p>- 具備SEMI OCR 及可選配 2D-Code Reader</p>
+            <p>- 可選用六軸Root進行翻轉，支援再生晶圓</p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>晶圓探針 Sorting</h2>
+          <img src="/images/probe-sorting.png" alt="Probe Sorting">
+          <div class="product-info">
+            <p>- 對散置探針做方向判斷及檢查，自動放置至抗靜電自吸附盒或指定位置</p>
+            <p>- 依需求精度可選用手臂或精密滑台方式</p>
+            <p>- 可加特殊測頭</p>
+            <p></p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <img src="/images/icon-pcb.png" alt="PCB ICON">
+        <h2>PCB 與 陶瓷基板自動化產線方案</h2>
+      </div>
+      <div class="category-content">
+        <div class="semi-card">
+          <h2>水平線投收板機</h2>
+          <img src="/images/horizontal-loader.png" alt="水平線投收板機">
+          <div class="product-info">
+            <p>- 可將小片PCB 依腳本及設定依序投放銜接 至水平主製程</p>
+            <p>- 如刷磨、顯影、蝕刻、浸潤等製程，皆有對應</p>
+            <p>- 搭載遠距視覺定位與縫合演算法，實現與前後段機構同步整合</p>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>產品正反面 AOI 及 3D檢查 </h2>
+          <img src="/images/aoi-inspection.png" alt="AOI檢測">
+          <div class="product-info">
+            <p>- 使用高解析Line-Scan跟高速切換多種光源以達到高UPH的AOI檢查</p>
+            <p>- 崩角，破裂，焊料溢出/殘留，凹陷，刮傷，毛邊，孔洞</p>
+            <p>- 汙染，氧化，刮傷，孔洞內氧化，露銅，金導體殘留</p>
+            <p>- 以及3D輪廓檢查版本</p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>電測方案（多站自動上下料, 表頭資訊整合）</h2>
+          <img src="/images/test-handler.png" alt="電測方案">
+          <div class="product-info">
+            <p>- 支援 A.R. HyPot 系列，提供完整表頭資訊整合與資料回傳。</p>
+            <p>- 支援 HIOKI 全系列及</p>
+            <p>- 支援大部分台廠設備</p>
+            <p>- 可選用SCARA,六軸Robot(如需翻轉)</p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>陶瓷基板掛架上下料機</h2>
+          <img src="/images/ceramic-loader.png" alt="掛架上下料機">
+          <div class="product-info">
+            <p>- 應用於化學電鍍線，將基板自動排列至銅掛架陣列</p>
+            <p>- 並可搭配設計適用於自動化的鍍銅掛架</p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>電鍍線鍍籃上下料機</h2>
+          <img src="/images/plating-handler.png" alt="鍍籃上下料機">
+          <div class="product-info">
+            <p>- 應用於酸洗、電鍍、化學鎳金等多槽製程</p>
+            <p>- 手臂上下料</p>
+            <p>- 附帶設計容許高剛性且寬溫的PVDF/PEEK治具</p>
+            <p>- 附帶烘乾模組</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <img src="/images/icon-lab.png" alt="實驗室ICON">
+        <h2>實驗室 與 客製化解決方案</h2>
+      </div>
+      <div class="category-content">
+        <div class="semi-card">
+          <h2>觸控筆／平板 5軸循環測試機</h2>
+          <img src="/images/pen-tester.png" alt="觸控筆測試機">
+          <div class="product-info">
+            <p>- 高速CNC控制，5軸同動，完全模擬人手</p>
+            <p>- 可整合各式回授或壓力控制</p>
+            <p>- 可輸出客製化API供外部控制</p>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>人機介面 Kiosk Mode</h2>
+          <img src="/images/kiosk-hmi.png" alt="Kiosk HMI">
+          <div class="product-info">
+            <p>- 針對各式控制器(PLC, CNC, SCADA...)，提供PC-Based Kiosk HMI方案</p>
+            <p>- 基於MC protocol, OPC UA等常見方式做最佳化query/write</p>
+            <p>- 可支援Redfish, MQTT 等特殊環境的應用</p>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>離心力測試機</h2>
+          <img src="/images/centrifugal-tester.png" alt="">
+          <div class="product-info">
+            <p>- 模擬旋轉應力測試，評估產品穩定性與材料特性。</p>
+            <p>- 可任意指定加速度</p>
+            <p>- 可針對材質調整減少磁力影響測試結果</p>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="semi-card">
+          <h2>Universal DUT 夾具</h2>
+          <img src="/images/dut-fixture.png" alt="">
+          <div class="product-info">
+            <p>- 提供各式DUT共用夾具方案，降低上線更換壓力並提升測試效率。</p>
+            <p>- 消費性電子產品</p>
+            <p>- 消費性車用模組測試</p>
+            <p></p>
+          </div>
+        </div>
+
+      </div>
     </section>
   </main>
 
   <footer id="site-footer"></footer>
 
-  <script src="/js/include.js"></script>
+  <script>
+    function toggleCategory(header) {
+      const section = header.parentElement;
+      section.classList.toggle('open');
+    }
+  </script>
 </body>
 
 </html>
