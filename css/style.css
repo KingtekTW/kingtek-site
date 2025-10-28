@@ -10,7 +10,7 @@ body {
 }
 
 html {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 body {
@@ -114,13 +114,13 @@ body {
   display: none;
 }
 
-@media (min-width: 1151px) {
+@media (min-width: 1281px) {
   .mobile-only {
     display: none;
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1280px) {
   .desktop-only {
     display: none;
   }
