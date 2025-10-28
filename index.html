@@ -17,8 +17,20 @@
   <style>
     .index-minimal {
       text-align: center;
-      padding: 10vh 20px 10vh;
+      padding: 12vh 20px 12vh;
       letter-spacing: 0.6px;
+      position: relative;
+      overflow: hidden;
+      background: url("/images/background.png") center/cover no-repeat;
+      background-attachment: fixed;
+    }
+
+    .index-minimal::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.7);
+      z-index: 0;
     }
 
     .index-minimal h1 {
@@ -27,12 +39,21 @@
       margin-bottom: 0.4em;
       color: #222;
       letter-spacing: 0.5px;
+      position: relative;
+      z-index: 1;
     }
 
     .index-minimal .tagline {
       font-size: 1.2rem;
       color: #444;
       margin-bottom: 2.8em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .index-nav {
+      position: relative;
+      z-index: 1;
     }
 
     .index-nav a {
@@ -63,7 +84,14 @@
 
     @media (max-width: 768px) {
       .index-minimal {
-        padding:  6vh 18px  6vh;
+        padding: 6vh 18px 6vh;
+        background-attachment: scroll;
+        background-position: left center;
+        background-size: 100%;
+      }
+
+      .index-minimal::before {
+        background: rgba(255, 255, 255, 0.72);
       }
 
       .index-minimal h1 {
